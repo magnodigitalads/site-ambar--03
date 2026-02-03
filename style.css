@@ -579,7 +579,7 @@ footer p {
 ========================= */
 
 .menu-principal {
- background: rgb(255, 255, 255); /* mais transparente */
+ background: rgba(255, 255, 255, 0.301); /* mais transparente */
   backdrop-filter: blur(4px);            /* blur mais leve */
   -webkit-backdrop-filter: blur(4px);
   padding: 12px 24px;
