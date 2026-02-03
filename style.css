@@ -407,6 +407,8 @@ footer p {
   .menu-principal ul {
     flex-direction: column;
     gap: 10px;
+    width: 100%;
+    text-align: center;
   }
   .menu-principal {
     flex-direction: column;
@@ -426,6 +428,11 @@ footer p {
   .btn-whats {
    margin-left: 0;
   }
+  .topo {
+    min-height: 60vh;
+    background-size: cover;
+    background-position: center top;
+  }
 }
 
 
@@ -443,6 +450,13 @@ footer p {
 @media (max-width: 768px) {
   .parallax-equipe {
     background-attachment: scroll;
+    background-position: center top;
+  }
+
+  .parallax-equipe .overlay {
+    min-height: auto;      /* REMOVE 100vh */
+    padding: 02px 0;       /* controla a altura visual */
+    align-items: flex-start;
   }
 }
 
@@ -558,5 +572,25 @@ footer p {
   .menu-principal .menu-list.active {
     display: flex;
   }
+}
+
+/* =========================
+   MENU COM FUNDO TRANSLÚCIDO
+========================= */
+
+.menu-principal {
+ background: rgb(255, 255, 255); /* mais transparente */
+  backdrop-filter: blur(4px);            /* blur mais leve */
+  -webkit-backdrop-filter: blur(4px);
+  padding: 12px 24px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+.menu-principal a {
+  color: #000;
+  font-weight: 600;
+}
+.menu-principal a:hover {
+  color: #d4af37;
 }
 
