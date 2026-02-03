@@ -12,11 +12,26 @@
   
 
 <header class="topo">
-  <div class="container">
-    <img src="Fotos para o Site Âmbar/imagens/logo-ambar.png" alt="Âmbar Contabilidade e Consultoria">
-        
+  <div class="container header">
+
+    <!-- NÍVEL 1 -->
+    <div class="header-top">
+      <img class="logo" src="Fotos para o Site Âmbar/imagens/logo-ambar.png" alt="Âmbar Contabilidade e Consultoria">
+
+      <a href="https://wa.me/5531988159337" class="btn-whats">
+        WhatsApp
+      </a>
+    </div>
+
+    <!-- NÍVEL 2 -->
     <nav class="menu-principal">
-  <ul>
+
+  <!-- Botão Hamburguer (mobile) -->
+  <button class="menu-toggle" aria-label="Abrir menu">
+    ☰
+  </button>
+
+  <ul class="menu-list">
     <li><a href="#home">Home</a></li>
     <li><a href="#cultura">Cultura</a></li>
     <li><a href="#servicos">Serviços</a></li>
@@ -25,10 +40,11 @@
     <li><a href="#depoimentos">Depoimentos</a></li>
   </ul>
 
-  <a href="https://wa.me/5531988159337" class="btn-whats">WhatsApp</a>
 </nav>
+
   </div>
 </header>
+
 
 <!-- HOME -->
 <section id="home">
@@ -272,5 +288,13 @@
     <p>© 2026 Âmbar Contabilidade e Consultoria Ltda.</p>
   </div>
 </footer>
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('.menu-list');
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+  });
+</script>
 
 </body>

@@ -16,7 +16,6 @@ body {
   color: #222;
   line-height: 1.6;
   
-  
 }
 
 a {
@@ -39,44 +38,54 @@ a:hover {
 }
 
 /* =========================
-   HEADER
+   HEADER eu corrigi esta parte que estava quebrando
+   a partir daqui que começei a organizar o conteudo
 ========================= */
+.header {
+  padding: 20px 0;
+}
+
+/* NÍVEL 1 */
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .topo {
   background-image: url("../site-ambar--03/Fotos\ para\ o\ Site\ Âmbar/escritorio.jpg");
   background-size: cover;
   background-position: center 40%;
   background-repeat: no-repeat;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   
 }
 
 .topo img {
-  position: relative;
-  margin: 0px;
-  max-width: 100px;
+  position: static;
+  max-width: 80px;
   border-radius: 50px;
-  top: -200px;  /* Desloca 50px para baixo a partir de onde ela estaria */
-  left: -80px; /* Desloca 20px para a direita a partir de onde ela estaria */
 }
-
+.logo {
+  max-width: 90px;
+}
 
 
 /* =========================
    MENU
 ========================= */
 .menu-principal {
-  display: flex; /* Ativa o Flexbox */
-  justify-content: space-between; /* Espaça a logo e o menu */
-  align-items: center; /* Alinha verticalmente ao centro */
-  padding: 20px 40px; /* Adiciona um espaçamento interno */
-  position: absolute; /* Posiciona sobre a imagem de fundo */
-  top: 10px; /* Alinha no topo */
-  left: 150px; /* Alinha à esquerda */
-  width: 100%; /* Ocupa toda a largura */
-  box-sizing: border-box; /* Garante que o padding não afete a largura total */
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  left: 0;
+  margin-top: 20px;
   
 }
 
@@ -85,7 +94,10 @@ a:hover {
   list-style: none; /* Remove os pontos da lista */
   margin: 0;
   padding: 0;
-  display: flex; /* Coloca os itens do menu em linha */
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
 }
 
 .menu-principal li {
@@ -120,9 +132,10 @@ a:hover {
 
 /* Botão WhatsApp */
 .btn-whats {
-  
+  padding: 10px 22px;
   margin-top: 10px;
-  left: -180px;
+  position: static;
+  margin-left: 20px;
   background: #25d366;
   color: #000;
   padding: 10px 20px;
@@ -276,9 +289,9 @@ footer p {
 }
 
 .membro img {
-  width: 430px;
-  height: 430px;
-  object-fit: cover;
+  width: 100%;
+  max-width: 280px;
+  height: auto;
   border-radius: 50%;
   border: 3px solid #d4af37;
   margin-bottom: 12px;
@@ -384,11 +397,45 @@ footer p {
   font-size: 1.05rem;
   font-weight: 600;
 }
+/* ajuste para celular*/
+@media (max-width: 768px) {
+   .header-top {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .menu-principal ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .menu-principal {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .menu-principal ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-principal li {
+    margin: 10px 0;
+  }
+
+  .btn-whats {
+   margin-left: 0;
+  }
+}
+
 
 /* Desktop */
 @media (min-width: 768px) {
   .pilares {
     grid-template-columns: repeat(2, 1fr);
+  }
+   .equipe-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -419,11 +466,16 @@ footer p {
 }
 .qs-img img {
   width: 100%;
-  max-width: 420px;   /* AQUI você controla o tamanho */
-  height: 400px;      /* altura visual forte */
-  border-radius: 10px;
-  border: 3px solid #d4af37;
+  max-width: 520px;   /* AUMENTA no desktop */
+  height: 480px;      /* impacto visual */
   object-fit: cover;
+}
+
+@media (max-width: 480px) {
+  .qs-img img {
+    max-width: 240px;
+    height: 220px;
+  }
 }
 
 
@@ -433,16 +485,16 @@ footer p {
     gap: 30px;
   }
 
-  .qs-img img {
-    max-width: 220px;
-    margin: 0 auto;
-    display: block;
+   .qs-img img {
+    max-width: 300px;
+    height: 260px;
+  }
   }
 
   .qs-text {
     padding: 40px 20px;
   }
-}
+
 .qs-img img {
   animation: slideLeft 1.2s ease forwards;
 }
@@ -459,5 +511,52 @@ footer p {
 @keyframes slideRight {
   from { opacity: 0; transform: translateX(40px); }
   to   { opacity: 1; transform: translateX(0); }
+}
+
+@media (min-width: 1024px) {
+  .qs-img img {
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  }
+}
+
+
+/* =========================
+   MENU HAMBURGUER - DEFINITIVO
+========================= */
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* DESKTOP */
+.menu-principal .menu-list {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .menu-principal .menu-list {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .menu-principal .menu-list.active {
+    display: flex;
+  }
 }
 
