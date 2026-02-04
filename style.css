@@ -466,7 +466,7 @@ footer p {
   .parallax-equipe .overlay {
     min-height: auto;
     padding: 80px 0;
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(0, 0, 0, 0.308);
   }
 }
 
@@ -825,4 +825,42 @@ footer p {
   .sobre-conteudo {
     padding: 0 15px;
   }
+}
+
+/* =========================
+   IMAGEM SOBRE – MOBILE
+========================= */
+
+/* Esconde imagem no desktop */
+.sobre-img-mobile {
+  display: none;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  /* Mostra imagem fora do parallax */
+  .sobre-img-mobile {
+    display: block;
+    width: 100%;
+  }
+
+  .sobre-img-mobile img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Desativa parallax visual */
+  .parallax-equipe {
+    background-image: none;
+  }
+
+  /* Texto vira bloco normal */
+  .parallax-equipe .overlay {
+    background: #000000a1;
+    min-height: auto;
+    padding: 60px 0;
+  }
+
 }
