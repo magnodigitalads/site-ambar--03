@@ -361,7 +361,7 @@ footer p {
 
 /* Camada escura para leitura */
 .parallax-equipe .overlay {
-  background: rgba(19, 18, 18, 0.233);
+   background: rgba(0, 0, 0, 0.55);
   min-height: 100vh;               /* controla o tamanho do parallax */
   display: flex;
   align-items: center;
@@ -380,6 +380,14 @@ footer p {
   max-width: 800px;
   margin: 0 auto 30px;
 }
+.parallax-equipe h2,
+.parallax-equipe h3,
+.parallax-equipe h4,
+.parallax-equipe p,
+.parallax-equipe li {
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
 
 /* Pilares */
 .pilares {
@@ -448,15 +456,17 @@ footer p {
 
 /* Mobile - remove parallax (boa prática) */
 @media (max-width: 768px) {
-  .parallax-equipe {
-    background-attachment: scroll;
+   .parallax-equipe {
+    background-size: contain;
     background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
   }
 
   .parallax-equipe .overlay {
-    min-height: auto;      /* REMOVE 100vh */
-    padding: 02px 0;       /* controla a altura visual */
-    align-items: flex-start;
+    min-height: auto;
+    padding: 80px 0;
+    background: rgba(0, 0, 0, 0.75);
   }
 }
 
@@ -757,5 +767,62 @@ footer p {
 
   #servicos p {
     padding: 0 10px;
+  }
+}
+
+/* =========================
+   SOBRE A ÂMBAR – CONTEÚDO
+========================= */
+
+.sobre-conteudo {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+.sobre-conteudo h3 {
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.sobre-conteudo h4 {
+  margin-top: 40px;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  color: #d4af37;
+}
+
+.sobre-conteudo p {
+  max-width: 750px;
+  margin: 10px auto 20px;
+  color: #fff;
+}
+
+.sobre-conteudo .frase-impacto {
+  font-style: italic;
+  font-weight: 600;
+  color: #f1f1f1;
+  margin: 25px auto;
+}
+
+.sobre-conteudo .assinatura {
+  margin-top: 30px;
+  font-weight: 700;
+  color: #d4af37;
+}
+
+/* Ajuste dos pilares dentro do parallax */
+.parallax-equipe .pilares {
+  margin-top: 30px;
+}
+
+.parallax-equipe .pilares li {
+  color: #fff;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .sobre-conteudo {
+    padding: 0 15px;
   }
 }
