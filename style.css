@@ -52,7 +52,7 @@ a:hover {
   align-items: center;
 }
 .topo {
-  background-image: url("../site-ambar--03/Fotos\ para\ o\ Site\ Âmbar/escritorio.jpg");
+  background-image: url("fotos/escritorio.jpg");
   background-size: cover;
   background-position: center 40%;
   background-repeat: no-repeat;
@@ -351,7 +351,7 @@ footer p {
    SOBRE A ÂMBAR - PARALLAX
 ========================= */
 .parallax-equipe {
-  background-image: url("../site-ambar--03/Fotos\ para\ o\ Site\ Âmbar/equipe ambar.jpg");
+  background-image: url("fotos/equipe_ambar.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
