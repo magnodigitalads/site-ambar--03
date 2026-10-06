@@ -32,11 +32,13 @@ a:hover {
 ========================= */
 .container {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 10px;
 }
-
+.topo #home {
+  max-width: 900px;
+}
 /* =========================
    HEADER eu corrigi esta parte que estava quebrando
    a partir daqui que começei a organizar o conteudo
@@ -181,27 +183,87 @@ p {
 }
 
 /* =========================
-   HOME
+/* =========================
+   NOVO HERO - HOME
 ========================= */
+
 #home {
-  padding: 40px;
-  background: #f7f7f7;
-  text-align: center;
-  
+  padding: 70px 20px 90px;
+  background: transparent;
+  color: #fff;
+  text-align: left;
+}
+
+.hero-conteudo {
+  max-width: 850px;
+  margin: 0;
+  padding-top: 45px;
+  padding-left: 60px;
+}
+
+.hero-tag {
+  margin-bottom: 18px;
+  color: #d4af37;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.7);
+}
+
+#home h1 {
+  max-width: 800px;
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 3rem;
+  line-height: 1.1;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.7);
 }
 
 #home .subtitulo {
-  font-size: 1rem;
-  margin-bottom: 25px;
+  max-width: 760px;
+  margin-bottom: 30px;
+  color: #fff;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+}
+
+.hero-botoes {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn-portfolio,
+.btn-cta {
+  display: inline-block;
+  padding: 13px 24px;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.btn-portfolio {
+  background: #d4af37;
+  color: #000;
+}
+
+.btn-portfolio:hover {
+  background: #f0c94b;
+  text-decoration: none;
 }
 
 .btn-cta {
-  display: inline-block;
+  background: transparent;
+  color: #fff;
+  border: 1px solid #d4af37;
+}
+
+.btn-cta:hover {
   background: #d4af37;
   color: #000;
-  padding: 12px 22px;
-  font-weight: 700;
-  border-radius: 60px;
+  text-decoration: none;
 }
 
 /* =========================
@@ -861,6 +923,985 @@ footer p {
     background: #000000a1;
     min-height: auto;
     padding: 60px 0;
+  }
+
+}
+
+/* =========================
+   NOVO CABEÇALHO ÂMBAR
+========================= */
+
+.header-top {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 15px 0;
+}
+
+/* Marca: logo + nome */
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.marca:hover {
+  text-decoration: none;
+}
+
+.marca .logo {
+  width: 54px;
+  height: 54px;
+  max-width: 54px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.marca span {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+}
+
+
+/* Menu */
+
+.menu-principal {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.menu-principal .menu-list {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-principal .menu-list li {
+  margin: 0;
+}
+
+.menu-principal .menu-list a {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+  position: relative;
+  white-space: nowrap;
+}
+
+.menu-principal .menu-list a:hover {
+  color: #d4af37;
+}
+
+.menu-principal .menu-list a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  width: 0;
+  height: 2px;
+  background: #d4af37;
+  transition: 0.3s;
+}
+
+.menu-principal .menu-list a:hover::after {
+  width: 100%;
+}
+
+
+/* =========================
+   MENU MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .header-top {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .marca span {
+    font-size: 0.95rem;
+  }
+
+  .marca .logo {
+    width: 44px;
+    height: 44px;
+  }
+
+  .menu-toggle {
+    display: block;
+    background: rgba(255, 255, 255, 0.75);
+    border: none;
+    border-radius: 10px;
+    padding: 8px 11px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #000;
+  }
+
+  .menu-principal .menu-list {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 45px;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 220px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  }
+
+  .menu-principal .menu-list.active {
+    display: flex;
+  }
+
+  .menu-principal .menu-list a {
+    color: #000;
+    font-size: 1rem;
+  }
+
+}
+
+/* =========================
+   POSICIONAMENTO FINAL DO MENU
+========================= */
+
+.menu-principal {
+  position: absolute;
+  right: 0;
+  left: auto;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+
+  padding: 0;
+  margin: 0;
+
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+/* =========================
+   PROJETOS COM RECURSOS DE
+========================= */
+
+#recursos {
+  background: #f4efe8;
+  padding: 45px 0;
+  color: #1f1a14;
+}
+
+.recursos-conteudo {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.recursos-titulo {
+  margin-bottom: 25px;
+  color: #6b6258;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.recursos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.recurso-card {
+  min-height: 72px;
+  padding: 12px 15px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: #fff;
+  border: 1px dashed #cfc6bb;
+  border-radius: 10px;
+
+  text-align: center;
+}
+
+.recurso-card strong {
+  font-size: 1rem;
+  color: #2b2723;
+}
+
+.recurso-card span {
+  margin-top: 3px;
+  font-size: 0.7rem;
+  color: #8a8279;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 900px) {
+
+  .recursos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  #recursos {
+    padding: 35px 15px;
+  }
+
+  .recursos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .recurso-card {
+    min-height: 65px;
+  }
+
+}
+/* =========================
+   PORTFÓLIO
+========================= */
+
+#portfolio {
+  background: #fff;
+  padding: 80px 0;
+  color: #211d18;
+}
+
+.portfolio-conteudo {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.portfolio-tag {
+  margin-bottom: 12px;
+  color: #b18413;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.portfolio-conteudo > h2 {
+  margin-bottom: 15px;
+  font-size: 2.6rem;
+  line-height: 1.15;
+  color: #211d18;
+}
+
+.portfolio-intro {
+  max-width: 700px;
+  margin-bottom: 55px;
+  color: #6d665e;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+
+/* =========================
+   CATEGORIA
+========================= */
+
+.portfolio-categoria {
+  border-top: 1px solid #ddd6ce;
+  padding-top: 35px;
+}
+
+.categoria-topo {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.categoria-icone {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #211d18;
+  border-radius: 12px;
+
+  font-size: 1.4rem;
+}
+
+.categoria-topo h3 {
+  margin: 0 0 5px;
+  font-size: 2rem;
+  color: #211d18;
+}
+
+.categoria-topo p {
+  margin: 0;
+  color: #6d665e;
+}
+
+
+/* =========================
+   PROJETO
+========================= */
+
+.projeto-card {
+  background: #211d18;
+  border-radius: 20px;
+  padding: 35px;
+  color: #fff;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.projeto-cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 25px;
+}
+
+.projeto-orgao {
+  flex: 0 0 150px;
+}
+
+.orgao-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 75px;
+  padding: 15px;
+
+  background: #fff;
+  color: #211d18;
+
+  border-radius: 12px;
+
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.projeto-info {
+  flex: 1;
+}
+
+.projeto-tag {
+  margin-bottom: 8px;
+  color: #d4af37;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.projeto-info h4 {
+  margin-bottom: 8px;
+  color: #fff;
+  font-size: 1.6rem;
+}
+
+.projeto-info p:last-child {
+  margin: 0;
+  color: #d8d1c8;
+  line-height: 1.6;
+}
+
+
+/* =========================
+   DETALHES DO PROJETO
+========================= */
+
+.projeto-detalhes {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+  gap: 25px;
+
+  padding: 30px;
+
+  background: #2b241c;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 15px;
+}
+
+.projeto-descricao {
+  position: relative;
+}
+
+.status-projeto {
+  display: inline-block;
+
+  margin-bottom: 15px;
+  padding: 5px 12px;
+
+  background: rgba(212,175,55,0.15);
+  color: #d4af37;
+
+  border-radius: 20px;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.tipo-projeto {
+  margin-bottom: 8px;
+  color: #bdb4aa;
+  font-size: 0.85rem;
+}
+
+.projeto-descricao h5 {
+  margin-bottom: 12px;
+  color: #fff;
+  font-size: 1.7rem;
+}
+
+.projeto-descricao > p:not(.tipo-projeto):not(.executamos) {
+  color: #d8d1c8;
+  line-height: 1.6;
+}
+
+.executamos {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  color: #d4af37;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.servicos-projeto {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.servicos-projeto span {
+  padding: 8px 12px;
+  background: #211d18;
+  border-radius: 20px;
+  color: #e8e1d8;
+  font-size: 0.8rem;
+}
+
+
+/* =========================
+   PROPONENTE
+========================= */
+
+.proponente {
+  padding: 25px;
+  background: #211d18;
+  border-radius: 14px;
+}
+
+.proponente-titulo {
+  margin-bottom: 15px;
+  color: #a9a097;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.proponente h5 {
+  margin-bottom: 5px;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.proponente p {
+  margin-bottom: 8px;
+  color: #bdb4aa;
+  line-height: 1.5;
+}
+
+.proponente strong {
+  color: #d4af37;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 768px) {
+
+  #portfolio {
+    padding: 60px 15px;
+  }
+
+  .portfolio-conteudo > h2 {
+    font-size: 2rem;
+  }
+
+  .categoria-topo {
+    align-items: flex-start;
+  }
+
+  .categoria-topo h3 {
+    font-size: 1.6rem;
+  }
+
+  .projeto-card {
+    padding: 20px;
+  }
+
+  .projeto-cabecalho {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  .projeto-orgao {
+    flex: none;
+  }
+
+  .projeto-detalhes {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+}
+.logos-recursos {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.logos-recursos .orgao-logo {
+  min-height: 55px;
+  width: 150px;
+  box-sizing: border-box;
+}
+/* Espaçamento entre os projetos do portfólio */
+
+.projeto-card + .projeto-card {
+  margin-top: 30px;
+}
+/* =========================
+   MÚSICA, LITERATURA E OUTRAS LINGUAGENS
+========================= */
+
+.portfolio-outras {
+  margin-top: 75px;
+  border-top: 1px solid #ddd6ce;
+  padding-top: 35px;
+}
+
+
+/* CABEÇALHO */
+
+.outras-cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.outras-cabecalho h3 {
+  margin: 0;
+  color: #211d18;
+  font-size: 1.5rem;
+}
+
+
+/* FILTROS */
+
+.filtros-portfolio {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+.filtro {
+  padding: 9px 16px;
+
+  background: #fff;
+  border: 1px solid #d8cec1;
+  border-radius: 25px;
+
+  color: #211d18;
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.filtro.ativo {
+  background: #211d18;
+  border-color: #211d18;
+  color: #fff;
+}
+
+
+/* GRID */
+
+.outras-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+
+/* CARD */
+
+.projeto-mini {
+  min-height: 250px;
+
+  padding: 20px;
+
+  background: #fff;
+
+  border: 1px solid #ded5ca;
+  border-radius: 14px;
+
+  box-sizing: border-box;
+}
+
+
+/* TOPO DO CARD */
+
+.mini-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.mini-orgao {
+  display: inline-block;
+
+  padding: 8px 10px;
+
+  border: 1px dashed #cfc4b6;
+  border-radius: 6px;
+
+  color: #4f4840;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.mini-status {
+  padding: 6px 10px;
+
+  background: #f4eee5;
+  border-radius: 20px;
+
+  color: #9a6910;
+  font-size: 0.65rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+
+/* LOCAL / CATEGORIA */
+
+.mini-local {
+  margin: 0 0 10px;
+
+  color: #6e655d;
+  font-size: 0.75rem;
+}
+
+
+/* TÍTULO */
+
+.projeto-mini h4 {
+  margin: 0 0 12px;
+
+  color: #211d18;
+  font-size: 1.15rem;
+  line-height: 1.25;
+}
+
+
+/* DESCRIÇÃO */
+
+.mini-descricao {
+  margin: 0 0 15px;
+
+  color: #514a43;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+
+/* SERVIÇOS */
+
+.mini-servicos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.mini-servicos span {
+  padding: 6px 8px;
+
+  background: #f4eee5;
+  border-radius: 6px;
+
+  color: #514a43;
+  font-size: 0.65rem;
+}
+
+
+/* PLACEHOLDER */
+
+.projeto-placeholder {
+  color: #8a8178;
+}
+
+.projeto-placeholder h4 {
+  color: #211d18;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 900px) {
+
+  .outras-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .outras-cabecalho {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .portfolio-outras {
+    margin-top: 55px;
+  }
+
+  .outras-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .outras-cabecalho h3 {
+    font-size: 1.3rem;
+  }
+
+  .filtros-portfolio {
+    width: 100%;
+  }
+
+  .filtro {
+    flex: 1;
+  }
+
+}
+/* =========================
+   COMO ATUAMOS
+========================= */
+
+#como-atuamos {
+  background: #f4efe8;
+  padding: 80px 0;
+  color: #1f1a14;
+}
+
+.atuamos-conteudo {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.atuamos-tag {
+  margin-bottom: 12px;
+
+  color: #b18413;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.atuamos-conteudo > h2 {
+  margin-bottom: 45px;
+
+  color: #1f1a14;
+  font-size: 2.4rem;
+  line-height: 1.2;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.atuamos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.atuamos-card {
+  position: relative;
+
+  padding: 28px;
+
+  background: #fff;
+
+  border: 1px solid #ded5ca;
+  border-radius: 16px;
+
+  min-height: 190px;
+
+  box-sizing: border-box;
+}
+
+.atuamos-numero {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+
+  margin-bottom: 20px;
+
+  background: #1f1a14;
+  color: #d4af37;
+
+  border-radius: 50%;
+
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.atuamos-card h3 {
+  margin-bottom: 12px;
+
+  color: #1f1a14;
+  font-size: 1.35rem;
+}
+
+.atuamos-card p {
+  margin: 0;
+
+  color: #625a52;
+  line-height: 1.6;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.atuamos-cta {
+  margin-top: 55px;
+  padding: 45px 30px;
+
+  background: #1f1a14;
+
+  border-radius: 18px;
+
+  text-align: center;
+}
+
+.atuamos-cta h3 {
+  margin-bottom: 12px;
+
+  color: #fff;
+  font-size: 1.8rem;
+}
+
+.atuamos-cta p {
+  max-width: 650px;
+  margin: 0 auto 25px;
+
+  color: #d8d1c8;
+  line-height: 1.6;
+}
+
+.btn-atuamos {
+  display: inline-block;
+
+  padding: 13px 24px;
+
+  background: #d4af37;
+  color: #000;
+
+  border-radius: 30px;
+
+  font-weight: 700;
+  text-decoration: none;
+
+  transition: 0.3s ease;
+}
+
+.btn-atuamos:hover {
+  background: #e5c04b;
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 800px) {
+
+  #como-atuamos {
+    padding: 60px 15px;
+  }
+
+  .atuamos-conteudo > h2 {
+    font-size: 2rem;
+  }
+
+  .atuamos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .atuamos-card {
+    min-height: auto;
   }
 
 }
