@@ -54,15 +54,25 @@ a:hover {
   align-items: center;
 }
 .topo {
-  background-image: url("fotos/escritorio.jpg");
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.68) 0%,
+      rgba(0, 0, 0, 0.52) 38%,
+      rgba(0, 0, 0, 0.18) 65%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    url("fotos/escritorio.jpg");
+
   background-size: cover;
-  background-position: center 40%;
+  background-position: center;
   background-repeat: no-repeat;
+
   width: 100vw;
   min-height: 100vh;
+
   display: flex;
   align-items: flex-start;
-  
 }
 
 .topo img {
